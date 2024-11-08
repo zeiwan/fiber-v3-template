@@ -37,18 +37,19 @@ type configHandler struct {
 }
 
 func (h configHandler) getConfig(ctx fiber.Ctx) error {
-	var obj req
+	var obj Req
 
 	if err := core.VerifyUtil.VerifyQuery(ctx, &obj); err != nil {
 		return err
 	}
-	resp, err := h.srv.GetConfig()
+
+	_, err := h.srv.GetConfig()
 	fmt.Println("obj", err)
-	return response.CheckAndRespWithData(ctx, resp, err)
+	return response.CheckAndResp(ctx, err)
 }
 
-type req struct {
+type Req struct {
 	Account string `form:"account"`
 	Id      int    `form:"id" validate:"required"`
-	Ids     int    `json:"ids" validate:"required"`
+	Ids     int    `form:"ids" validate:"required"`
 }

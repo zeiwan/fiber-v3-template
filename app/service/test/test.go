@@ -1,9 +1,7 @@
 package test
 
-import "fiber/core/response"
-
 type IConfigService interface {
-	GetConfig() (string, error)
+	GetConfig() (any, error)
 }
 
 func NewConfigService() IConfigService {
@@ -14,6 +12,7 @@ type configService struct {
 	//dao *dao.Query
 }
 
-func (c configService) GetConfig() (string, error) {
-	return "hello world", response.QueryError
+func (c configService) GetConfig() (any, error) {
+	//return "nil", response.QueryError
+	return "nil", nil
 }

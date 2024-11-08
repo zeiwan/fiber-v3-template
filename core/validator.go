@@ -46,6 +46,7 @@ func (vu verifyUtil) VerifyJSON(c fiber.Ctx, obj any) error {
 // VerifyQuery 验证查询参数是否合法
 func (vu verifyUtil) VerifyQuery(ctx fiber.Ctx, obj any) error {
 	bind := ctx.Bind()
+
 	// 绑定查询参数
 	if err := bind.Query(obj); err != nil {
 		return response.ParamsTypeError.MakeData(err.Error())

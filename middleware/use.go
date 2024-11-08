@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"fiber/core/response"
+	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/cors"
 	"github.com/gofiber/fiber/v3/middleware/csrf"
@@ -14,6 +15,14 @@ import (
 	jsoniter "github.com/json-iterator/go"
 )
 
+type structValidator struct {
+	validate *validator.Validate
+}
+
+func (v *structValidator) Validate(out any) error {
+	return v.validate.Struct(out)
+}
+
 // Use 初始化中间件，返回fiber.App
 func Use() *fiber.App {
 	conf := fiber.Config{
@@ -21,6 +30,7 @@ func Use() *fiber.App {
 		JSONEncoder:  jsoniter.Marshal,
 		ErrorHandler: response.ErrorHandler,
 		//DisableKeepalive: true,
+		//StructValidator: &structValidator{validate: validator.New()},
 	}
 	//*zap.Logger
 	app := fiber.New(conf)

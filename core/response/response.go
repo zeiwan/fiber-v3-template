@@ -1,8 +1,8 @@
 package response
 
 import (
+	"errors"
 	"fiber/global"
-	"fmt"
 	"github.com/gofiber/fiber/v3"
 	"strconv"
 )
@@ -11,16 +11,16 @@ import (
 type RespType struct {
 	code int
 	msg  string
-	data interface{}
+	data any
 	show int // 0:不显示 1:显示
 }
 
 // Response 响应格式结构
 type Response struct {
-	Code int         `json:"code"`
-	Msg  string      `json:"msg"`
-	Data interface{} `json:"data"`
-	Show int         `json:"show"`
+	Code int    `json:"code"`
+	Msg  string `json:"msg"`
+	Data any    `json:"data"`
+	Show int    `json:"show"`
 }
 
 var (
@@ -33,8 +33,8 @@ var (
 	RequestMethodError  = RespType{code: 0, msg: "请求方法错误"}
 	AssertArgumentError = RespType{code: 0, msg: "断言参数错误"}
 
-	QueryError  = RespType{code: 0, msg: "查询资源失败"}
-	DeleteError = RespType{code: 0, msg: "删除资源失败"}
+	QueryError  = RespType{code: 0, msg: "查询数据失败"}
+	DeleteError = RespType{code: 0, msg: "删除数据失败"}
 	EditError   = RespType{code: 0, msg: "编辑数据失败"}
 	CreateError = RespType{code: 0, msg: "创建数据失败"}
 
@@ -84,16 +84,9 @@ func (rt RespType) Data() interface{} {
 
 // Result 统一响应
 func Result(resp RespType) Response {
-	fmt.Println(resp.msg, "====RespType======")
-	//show := 0
-	//if !errors.Is(resp, Success) {
-	//	show = 1
-	//}
-	//
-	//if resp != Success {
-	//	fmt.Println(resp.msg, "====err")
-	//}
-
+	if resp.data == nil {
+		resp.data = []string{}
+	}
 	return Response{
 		Code: resp.code,
 		Msg:  resp.msg,
@@ -104,42 +97,29 @@ func Result(resp RespType) Response {
 
 // CheckAndResp 判断是否出现错误，并返回对应响应
 func CheckAndResp(ctx fiber.Ctx, err error) error {
-	_ = ErrorHandler(ctx, err)
+	if err != nil {
+		return ErrorHandler(ctx, err)
+	}
 	return ctx.JSON(Result(Success))
 }
 
 // CheckAndRespWithData 判断是否出现错误，并返回对应响应（带data数据）
 func CheckAndRespWithData(ctx fiber.Ctx, data interface{}, err error) error {
-	err = ErrorHandler(ctx, err)
-	fmt.Println(err, "====CheckAndRespWithData")
 	if err != nil {
-		fmt.Println(err, "====CheckAndRespWithData", err)
-
-		return err
+		return ErrorHandler(ctx, err)
 	}
-
 	return ctx.JSON(Result(Success.MakeData(data)))
-
 }
 
-// // 下载
-//
-//	func CheckDownloadResp(c *gin.Context, data any, err error) {
-//		if IsFailWithResp(c, err) {
-//			return
-//		}
-//		Result(c, FileDown, data)
-//	}
-//
-// FailLog 错误响应
-func FailLog(c fiber.Ctx, resp RespType) error {
-	loggerResp(resp, "Request Fail: url=[%s], resp.tpl=[%+v]", c.Path(), resp)
-	return c.JSON(Result(resp))
+// Fail 错误响应
+func Fail(ctx fiber.Ctx, resp RespType) error {
+	loggerResp(resp, "Request Fail: url=[%s], resp.tpl=[%+v]", ctx.Path(), resp)
+	return ctx.JSON(Result(resp))
 }
 
-// FailWithDataLog 错误响应附带data
-func FailWithDataLog(ctx fiber.Ctx, resp RespType) error {
-	loggerResp(resp, "Request FailWithData: url=[%s], resp.tpl=[%+v], data=[%+v]", ctx.Path(), resp.msg, resp.data)
+// FailWithData 错误响应附带data
+func FailWithData(ctx fiber.Ctx, resp RespType, data any) error {
+	loggerResp(resp, "Request FailWithData: url=[%s], resp.tpl=[%+v], data=[%+v]", ctx.Path(), resp.msg, data)
 	return ctx.JSON(Result(resp))
 }
 
@@ -157,11 +137,16 @@ func ErrorHandler(ctx fiber.Ctx, err error) error {
 	if err == nil {
 		return nil
 	}
+
+	// 自定义错误类型
 	var v RespType
-	fmt.Println(err.(RespType), "====ErrorHandler")
-	data := v.Data()
-	if data == nil {
-		data = []string{}
+	if errors.As(err, &v) {
+		data := v.Data()
+		if data == nil {
+			data = []string{}
+		}
+		return FailWithData(ctx, v, data)
 	}
-	return ctx.JSON(fiber.Map{"code": v.Code(), "msg": v.Msg(), "data1": data})
+	// 其他类型
+	return Fail(ctx, SystemError)
 }
