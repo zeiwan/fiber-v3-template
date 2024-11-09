@@ -3,6 +3,7 @@ package response
 import (
 	"errors"
 	"fiber/global"
+	"fmt"
 	"github.com/gofiber/fiber/v3"
 	"github.com/jinzhu/copier"
 	"strconv"
@@ -121,6 +122,7 @@ func Fail(ctx fiber.Ctx, resp RespType) error {
 // FailWithData 错误响应附带data
 func FailWithData(ctx fiber.Ctx, resp RespType, data any) error {
 	loggerResp(resp, "Request FailWithData: url=[%s], resp.tpl=[%+v], data=[%+v]", ctx.Path(), resp.msg, data)
+	fmt.Println("FailWithData====>", resp.msg)
 	return ctx.JSON(Result(resp))
 }
 
@@ -145,9 +147,11 @@ func ErrorHandler(ctx fiber.Ctx, err error) error {
 		if data == nil {
 			data = []string{}
 		}
+		fmt.Println("FailWithData====>", err)
 		return FailWithData(ctx, v, data)
 	}
 	// 其他类型
+	fmt.Println("Fail====>", err)
 	return Fail(ctx, SystemError)
 }
 

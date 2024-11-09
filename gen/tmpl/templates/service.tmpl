@@ -1,0 +1,25 @@
+package <%= PackageName %>
+
+import (
+	"fiber/app/schemas/req"
+	"fiber/app/schemas/resp"
+	"fiber/core/response"
+)
+
+type I<%= StructName %>Service interface {
+	Get<%= StructName %>(req.<%= StructName %>GetReq) (any, error)
+}
+
+func New<%= StructName %>Service() I<%= StructName %>Service {
+	return &<%= LowerStructName %>Service{}
+}
+
+type <%= LowerStructName %>Service struct {
+	dao *dao.Query
+}
+
+func (s <%= LowerStructName %>Service) Get<%= StructName %>(tgReq req.<%= StructName %>GetReq) (any, error) {
+	var obj resp.<%= StructName %>GetResp
+	response.Copy(&obj, tgReq)
+	return obj, nil
+}

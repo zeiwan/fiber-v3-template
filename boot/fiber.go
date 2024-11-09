@@ -12,18 +12,21 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 )
 
 func InitHttpServer() {
+	// 初始化中间件
 	app := middleware.Use()
+
 	// 初始化服务
 	service.InitService()
 
 	// 初始化路由
 	api.InitRouter(app)
-	// 获取所有路由
-	global.GetRouters = app.GetRoutes()
+
 	Listen := fmt.Sprintf(":%d", global.Conf.Server.Port)
+
 	// 启动应用
 	go func() {
 		if err := app.Listen(Listen, fiber.ListenConfig{EnablePrefork: global.Conf.Server.EnablePrefork}); err != nil {
@@ -33,9 +36,13 @@ func InitHttpServer() {
 
 	app.Get("/swagger/*", swagger.HandlerDefault)
 
+	// 等待服务器启动（短暂延迟）
+	time.Sleep(100 * time.Millisecond)
+	// 获取所有路由
+	middleware.GetAllRouter(app)
+
 	go func() {
 		app.Hooks().OnShutdown(func() error {
-
 			// 关闭redis
 			if err := global.Redis.Close(); err != nil {
 				log.Fatalf("Failed to close Redis connection: %v", err)
@@ -69,13 +76,6 @@ func shutdown(app *fiber.App) {
 		log.Fatalf("Server forced to shutdown: %v", err)
 	}
 	//	通过钩子函数关闭数据库
-	//if app.Hooks() != nil {
-	//	db, _ := global.Mysql.DB()
-	//	if err := db.Close(); err != nil {
-	//		log.Fatalf("Failed to close MySQL connection: %v", err)
-	//	}
-	//	global.Redis.Shutdown(context.Background())
-	//}
 
 	// 执行清理工作
 	log.Println("服务端优雅关闭")

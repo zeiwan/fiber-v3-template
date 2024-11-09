@@ -4,9 +4,15 @@
 
 [Fiber](https://gofiber.io/) is an Express.js inspired web framework build on top of Fasthttp, the fastest HTTP engine for Go. Designed to ease things up for **fast** development with **zero memory allocation** and **performance** in mind.
 
-懒的写文档，开箱即用.
-1.  技术栈:Gorm Gen Fiber Redis Mysql Swag
-
+- 只需注重业务方面，剩下的交个天意。
+#  🐙 技术栈
+- Gorm 
+- Gen
+- Fiber 
+- Redis
+- Mysql
+- Swag
+- 优雅永不过时
 
 ## ⚠️ License
 

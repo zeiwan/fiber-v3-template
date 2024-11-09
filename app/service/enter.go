@@ -1,10 +1,11 @@
 package service
 
 import (
+	"fiber/app/service/movie"
 	"fiber/app/service/test"
-	"fiber/core/uberDig"
-	"fiber/gen/dao"
+	"fiber/core/uber"
 	"fiber/global"
+	"fiber/model/dao"
 	"log"
 )
 
@@ -15,7 +16,7 @@ func InitService() {
 		return dao.Q
 	})
 	for i := 0; i < len(regFunctions); i++ {
-		if err := uberDig.ProvideForDI(regFunctions[i]); err != nil {
+		if err := uber.ProvideForDI(regFunctions[i]); err != nil {
 			log.Panic("ProvideForDI", err)
 		}
 	}
@@ -24,4 +25,5 @@ func InitService() {
 
 var initFunctions = []any{
 	test.NewConfigService,
+	movie.NewMovieService,
 }

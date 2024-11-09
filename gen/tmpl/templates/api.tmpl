@@ -1,0 +1,47 @@
+package <%= PackageName %>
+
+import (
+	"fiber/app/schemas/req"
+	"fiber/app/service/<%= PackageName %>"
+	"fiber/core"
+	"fiber/core/response"
+	"fiber/core/uber"
+	"fiber/middleware"
+	"github.com/gofiber/fiber/v3"
+)
+
+// <%= HandlerName %>Group 路由组入口（由uber框架自动加载）
+var <%= HandlerName %>Group = uber.Group(
+	"/<%= RoutePath %>",
+	new<%= HandlerName %>Handler,
+	reg<%= HandlerName %>Group,
+)
+
+// reg<%= HandlerName %>Group 注册路由组的具体路由
+func reg<%= HandlerName %>Group(r fiber.Router, group *uber.GroupBase) error {
+	return group.Reg(func(handle *<%= LowerCamelName %>Handler) error {
+		// 路由：GET /<%= RoutePath %>/get
+		r.Get("/get", handle.get<%= HandlerName %>, middleware.RecordLog).Name("获取<%= HandlerName %>")
+		return nil
+	})
+}
+
+// new<%= HandlerName %>Handler 构造函数
+func new<%= HandlerName %>Handler(srv <%= PackageName %>.I<%= HandlerName %>Service) *<%= LowerCamelName %>Handler {
+	return &<%= LowerCamelName %>Handler{srv: srv}
+}
+
+// <%= LowerCamelName %>Handler 路由处理器
+type <%= LowerCamelName %>Handler struct {
+	srv <%= PackageName %>.I<%= HandlerName %>Service
+}
+
+// get<%= HandlerName %> 处理逻辑
+func (h <%= LowerCamelName %>Handler) get<%= HandlerName %>(ctx fiber.Ctx) error {
+	var obj req.<%= HandlerName %>GetReq
+	if err := core.VerifyUtil.VerifyQuery(ctx, &obj); err != nil {
+		return err
+	}
+	resp, err := h.srv.Get<%= HandlerName %>(obj)
+	return response.CheckAndRespWithData(ctx, resp, err)
+}

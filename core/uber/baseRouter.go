@@ -1,4 +1,4 @@
-package uberDig
+package uber
 
 import (
 	"github.com/gofiber/fiber/v3"

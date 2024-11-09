@@ -1,0 +1,28 @@
+{"level":"info","ts":"2025-05-29 21:19:00","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-29 21:19:00","caller":"boot/trans.go:34","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-29 21:19:00","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-29 21:19:00","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-05-29 21:19:03","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-29 21:19:04","caller":"response/response.go:133","msg":"Request Fail: url=[/favicon.ico], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-29 21:19:07","caller":"response/response.go:133","msg":"Request Fail: url=[/.well-known/appspecific/com.chrome.devtools.json], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-29 21:22:14","caller":"response/response.go:133","msg":"Request Fail: url=[/test], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-29 21:22:30","caller":"response/response.go:133","msg":"Request Fail: url=[/adminapi/test], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-29 21:22:43","caller":"response/response.go:133","msg":"Request Fail: url=[/adminapi/test], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-29 21:23:54","caller":"response/response.go:133","msg":"Request Fail: url=[/adminapi/test], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-29 21:25:25","caller":"response/response.go:133","msg":"Request Fail: url=[/api/test], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-29 21:25:43","caller":"response/response.go:133","msg":"Request Fail: url=[/api/test/get], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-29 21:25:52","caller":"response/response.go:133","msg":"Request FailWithData: url=[/adminapi/test/get], resp.tpl=[参数校验错误], data=[Id为必填字段]"}
+{"level":"warn","ts":"2025-05-29 21:26:32","caller":"response/response.go:133","msg":"Request FailWithData: url=[/adminapi/test/get], resp.tpl=[参数校验错误], data=[Id为必填字段]"}
+{"level":"warn","ts":"2025-05-29 21:26:36","caller":"response/response.go:133","msg":"Request FailWithData: url=[/adminapi/test/get], resp.tpl=[参数校验错误], data=[Id为必填字段]"}
+{"level":"warn","ts":"2025-05-30 05:46:25","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-30 05:46:52","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-30 05:46:57","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-30 05:47:07","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-30 05:47:16","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-30 05:47:19","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-30 05:47:21","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-30 05:47:23","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-30 05:47:37","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-30 05:47:39","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-30 05:47:39","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-05-30 05:47:55","caller":"response/response.go:133","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}

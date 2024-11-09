@@ -16,4 +16,5 @@ func RecordLog(ctx fiber.Ctx) error {
 }
 func methodGet(ctx fiber.Ctx) {
 	fmt.Println(ctx.Queries(), ctx.Path(), ctx.Method(), ctx.GetRespHeader("X-Request-Id"), ctx.BaseURL(), ctx.Route().Name)
+
 }

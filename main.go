@@ -2,7 +2,7 @@ package main
 
 import (
 	"fiber/boot"
-	_ "fiber/docs"
+	//_ "fiber/docs"
 )
 
 //	@title			FiberTemplate Services
@@ -21,5 +21,6 @@ import (
 // @accept		json
 // @produce	json
 func main() {
+
 	boot.InitHttpServer()
 }

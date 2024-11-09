@@ -11,6 +11,8 @@ server:
   enablePrefork: false
   # 资源文件路径
   resourcePath: /resource
+  # 自动生成存放目录
+  genPath: app
 
 log:
   # 日志等级(-4:Debug, 0:Info,4:Warn, 8:Error, 参照slog.level源码)

@@ -28,7 +28,7 @@ func Use() *fiber.App {
 	conf := fiber.Config{
 		JSONEncoder:  json.Marshal,
 		JSONDecoder:  json.Unmarshal,
-		ErrorHandler: response.ErrorHandler,
+		ErrorHandler: response.ErrorHandler, // 自定义错误处理
 	}
 	//*zap.Logger
 	app := fiber.New(conf)
@@ -52,5 +52,6 @@ func Use() *fiber.App {
 	app.Use(recover.New())
 	//	添加自定义中间件鉴权
 	//app.Use(auth())
+
 	return app
 }

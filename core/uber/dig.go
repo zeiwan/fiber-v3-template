@@ -1,4 +1,4 @@
-package uberDig
+package uber
 
 import "go.uber.org/dig"
 

@@ -11,9 +11,9 @@ import (
 
 func main() {
 	g := gen.NewGenerator(gen.Config{
-		OutPath:      "./gen/dao",
+		OutPath:      "./model/dao",
 		Mode:         gen.WithoutContext | gen.WithDefaultQuery | gen.WithQueryInterface, // generate mode
-		ModelPkgPath: "./gen/model",                                                      // 定义 model 文件输出目录
+		ModelPkgPath: "./model/model",                                                    // 定义 model 文件输出目录
 		// 生成 gorm 标签的字段类型属性
 
 		// WithDefaultQuery 生成默认查询结构体(作为全局变量使用), 即`Q`结构体和其字段(各表模型)
@@ -65,6 +65,6 @@ func main() {
 
 	modelOpts := []gen.ModelOpt{softDeleteField, createTimeGormTag, updateTimeGormTag, deleteTimeGormTag}
 	// 生成 yaml 文件
-	yamlgen.NewYamlGenerator("./gen/gen.yaml").UseGormGenerator(g).Generate(modelOpts...)
+	yamlgen.NewYamlGenerator("./gen/gorm/gen.yaml").UseGormGenerator(g).Generate(modelOpts...)
 	g.Execute()
 }

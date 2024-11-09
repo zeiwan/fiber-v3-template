@@ -1,8 +1,8 @@
 package boot
 
 import (
-	"fiber/gen/model"
 	"fiber/global"
+	"fiber/model/model"
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
