@@ -1,4 +1,4 @@
-package initialize
+package boot
 
 func init() {
 	initConfig()

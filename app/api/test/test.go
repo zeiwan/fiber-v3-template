@@ -28,6 +28,18 @@ type configHandler struct {
 	srv test.IConfigService
 }
 
+// getConfig godoc
+//
+//	@Summary		test
+//	@Description	test.
+//	@Tags			Test
+//	@Accept			json
+//	@Produce		json
+//	@Param			request	body		req.TestGetReq	true	"Sign In Credentials"
+//	@Success		200		{object}	resp.TestGetResp
+//	@Failure		200		{object}	resp.TestGetResp
+//
+// @Router			/adminapi/test/get [get]
 func (h configHandler) getConfig(ctx fiber.Ctx) error {
 	var obj req.TestGetReq
 	if err := core.VerifyUtil.VerifyQuery(ctx, &obj); err != nil {

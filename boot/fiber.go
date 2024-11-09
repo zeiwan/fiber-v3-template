@@ -1,4 +1,4 @@
-package initialize
+package boot
 
 import (
 	"fiber/app/api"
@@ -6,14 +6,13 @@ import (
 	"fiber/global"
 	"fiber/middleware"
 	"fmt"
+	"github.com/SymbioSix/ProgressieAPI/utils/swagger"
 	"github.com/gofiber/fiber/v3"
 	"log"
 	"os"
 	"os/signal"
 	"syscall"
 )
-
-// swagger handler
 
 func InitHttpServer() {
 	app := middleware.Use()
@@ -22,17 +21,17 @@ func InitHttpServer() {
 
 	// 初始化路由
 	api.InitRouter(app)
+	// 获取所有路由
 	global.GetRouters = app.GetRoutes()
-	// 打印所有路由
 	Listen := fmt.Sprintf(":%d", global.Conf.Server.Port)
-	fmt.Println("Server is running on port:", Listen)
-
 	// 启动应用
 	go func() {
 		if err := app.Listen(Listen, fiber.ListenConfig{EnablePrefork: global.Conf.Server.EnablePrefork}); err != nil {
 			log.Fatalf("Failed to start server: %v", err)
 		}
 	}()
+
+	app.Get("/swagger/*", swagger.HandlerDefault)
 
 	go func() {
 		app.Hooks().OnShutdown(func() error {

@@ -51,7 +51,6 @@ func Use() *fiber.App {
 	//	添加错误处理中间件
 	app.Use(recover.New())
 	//	添加自定义中间件鉴权
-	app.Use(auth())
-
+	//app.Use(auth())
 	return app
 }
