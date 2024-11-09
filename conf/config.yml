@@ -4,11 +4,14 @@ server:
   # url前缀
   urlPrefix: adminapi
   # 程序监听端口
-  port: 8080
+  port: 8081
   # API地址
   baseApi: 0.0.0.0
+  # 预分叉模式
+  enablePrefork: false
   # 资源文件路径
   resourcePath: /resource
+
 log:
   # 日志等级(-4:Debug, 0:Info,4:Warn, 8:Error, 参照slog.level源码)
   level: 0
@@ -22,3 +25,37 @@ log:
   maxAge: 30
   # 是否压缩
   compress: true
+
+mysql:
+  # 用户名
+  username: root
+  # 密码
+  password: root
+  # 数据库名
+  database: likeadmin
+  # 主机地址
+  host: 127.0.0.1
+  # 端口
+  port: 3306
+  # 连接字符串查询参数
+  query: charset=utf8mb4&parseTime=True&loc=Local&timeout=10000ms
+
+#  rides配置
+redis:
+  # 用户名
+  username:
+  # 密码
+  password:
+  # 数据库端口
+  port: 6379
+  # 数据库地址
+  host: localhost
+  # 数据库名
+  database: 0
+
+# jwt配置
+jwt:
+  # token过期时间, 小时
+  timeout: 2
+  # token更新时间, 小时
+  maxRefresh: 2

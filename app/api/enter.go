@@ -11,8 +11,7 @@ import (
 
 func InitRouter(app *fiber.App) {
 	// 指定路由前缀
-	group := app.Group(global.Conf.URLPrefix)
-
+	group := app.Group(global.Conf.Server.URLPrefix)
 	routers := InitRouters[:]
 	fmt.Println("注册路由开始", routers)
 	for i := 0; i < len(routers); i++ {

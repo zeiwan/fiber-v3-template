@@ -2,12 +2,14 @@ package initialize
 
 import (
 	"fiber/global"
+	"fmt"
 	"github.com/gofiber/fiber/v3/log"
+
 	"github.com/spf13/viper"
 )
 
 // InitConfig 初始化配置文件函数
-func initViper() {
+func initConfig() {
 	// 设置配置文件名称（不包括扩展名）
 	viper.SetConfigName("config")
 	// 设置配置文件格式为yaml
@@ -24,4 +26,5 @@ func initViper() {
 	if err != nil {
 		log.Fatal("loadConfig Unmarshal err:", err)
 	}
+	fmt.Println(global.Conf)
 }

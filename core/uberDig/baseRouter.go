@@ -8,13 +8,13 @@ import (
 
 type GroupBase struct {
 	basePath    string
-	initHandle  interface{}
+	initHandle  any
 	regHandle   func(rg fiber.Router, group *GroupBase) error
 	middlewares []fiber.Handler
 }
 
 // Group 创建了一个新的路由器组
-func Group(relativePath string, initHandle interface{}, regHandle func(rg fiber.Router, group *GroupBase) error, middlewares ...fiber.Handler) *GroupBase {
+func Group(relativePath string, initHandle any, regHandle func(rg fiber.Router, group *GroupBase) error, middlewares ...fiber.Handler) *GroupBase {
 	return &GroupBase{
 		basePath:    relativePath,
 		initHandle:  initHandle,
@@ -38,6 +38,6 @@ func RegisterGroup(rg fiber.Router, group *GroupBase) {
 }
 
 // Reg 注册由DI处理的函数
-func (group GroupBase) Reg(function interface{}, opts ...dig.InvokeOption) error {
+func (group GroupBase) Reg(function any, opts ...dig.InvokeOption) error {
 	return DI(function, opts...)
 }

@@ -3,6 +3,7 @@ package middleware
 import (
 	"fiber/core/response"
 	"github.com/go-playground/validator/v10"
+	"github.com/goccy/go-json"
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/cors"
 	"github.com/gofiber/fiber/v3/middleware/csrf"
@@ -12,7 +13,6 @@ import (
 	"github.com/gofiber/fiber/v3/middleware/logger"
 	"github.com/gofiber/fiber/v3/middleware/recover"
 	"github.com/gofiber/fiber/v3/middleware/requestid"
-	jsoniter "github.com/json-iterator/go"
 )
 
 type structValidator struct {
@@ -26,11 +26,9 @@ func (v *structValidator) Validate(out any) error {
 // Use 初始化中间件，返回fiber.App
 func Use() *fiber.App {
 	conf := fiber.Config{
-		JSONDecoder:  jsoniter.Unmarshal,
-		JSONEncoder:  jsoniter.Marshal,
+		JSONEncoder:  json.Marshal,
+		JSONDecoder:  json.Unmarshal,
 		ErrorHandler: response.ErrorHandler,
-		//DisableKeepalive: true,
-		//StructValidator: &structValidator{validate: validator.New()},
 	}
 	//*zap.Logger
 	app := fiber.New(conf)
@@ -52,14 +50,8 @@ func Use() *fiber.App {
 	app.Use(idempotency.New())
 	//	添加错误处理中间件
 	app.Use(recover.New())
+	//	添加自定义中间件鉴权
+	app.Use(auth())
 
-	//app.Use =  // 注意：这里没有括号，因为是传递函数本身
 	return app
-}
-
-// Response 定义了错误响应的结构
-type Response struct {
-	Code int         `json:"code"`
-	Msg  string      `json:"msg"`
-	Data interface{} `json:"data"`
 }

@@ -10,59 +10,42 @@ import (
 
 var VerifyUtil = verifyUtil{}
 
-type verifyUtil struct {
-}
+type verifyUtil struct{}
 
-// VerifyForm 验证表单是否合法
-func (vu verifyUtil) VerifyForm(c fiber.Ctx, obj any) error {
-	bind := c.Bind()
-
-	// 绑定查询参数
-	if err := bind.Form(obj); err != nil {
-		return err
+// bindAndValidate 绑定并验证数据
+func (vu verifyUtil) bindAndValidate(obj any, bindFunc func(any) error) error {
+	// 绑定数据
+	if err := bindFunc(obj); err != nil {
+		return response.ParamsTypeError.MakeData(vu.translateErr(err).Error())
 	}
-	// 验证查询参数
+	// 验证数据
 	if err := global.Validate.Struct(obj); err != nil {
-		return vu.translateErr(err)
-	}
-	return nil
-}
-
-// VerifyJSON 验证json是否合法
-func (vu verifyUtil) VerifyJSON(c fiber.Ctx, obj any) error {
-	bind := c.Bind()
-
-	// 绑定查询参数
-	if err := bind.JSON(obj); err != nil {
-		return err
-	}
-	// 验证查询参数
-	if err := global.Validate.Struct(obj); err != nil {
-		return vu.translateErr(err)
-	}
-	return nil
-}
-
-// VerifyQuery 验证查询参数是否合法
-func (vu verifyUtil) VerifyQuery(ctx fiber.Ctx, obj any) error {
-	bind := ctx.Bind()
-
-	// 绑定查询参数
-	if err := bind.Query(obj); err != nil {
-		return response.ParamsTypeError.MakeData(err.Error())
-	}
-	// 验证查询参数
-	err := global.Validate.Struct(obj)
-	if err != nil {
 		return response.ParamsValidError.MakeData(vu.translateErr(err).Error())
 	}
 	return nil
 }
 
-// 翻译错误信息
+// VerifyForm 验证表单是否合法
+func (vu verifyUtil) VerifyForm(ctx fiber.Ctx, obj any) error {
+	return vu.bindAndValidate(obj, ctx.Bind().Form)
+}
+
+// VerifyJSON 验证json是否合法
+func (vu verifyUtil) VerifyJSON(ctx fiber.Ctx, obj any) error {
+	return vu.bindAndValidate(obj, ctx.Bind().JSON)
+}
+
+// VerifyQuery 验证查询参数是否合法
+func (vu verifyUtil) VerifyQuery(ctx fiber.Ctx, obj any) error {
+	return vu.bindAndValidate(obj, ctx.Bind().Query)
+}
+
+// translateErr 翻译错误信息
 func (vu verifyUtil) translateErr(err error) error {
-	for _, v := range err.(validator.ValidationErrors).Translate(global.Trans) {
-		return errors.New(v)
+	if validationErrors, ok := err.(validator.ValidationErrors); ok {
+		for _, v := range validationErrors.Translate(global.Trans) {
+			return errors.New(v)
+		}
 	}
-	return nil
+	return err
 }

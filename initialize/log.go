@@ -3,9 +3,9 @@ package initialize
 import (
 	"fiber/global"
 	"fiber/utils"
-	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
+	"gopkg.in/natefinch/lumberjack.v2"
 	"path/filepath"
 	"time"
 )
@@ -37,5 +37,6 @@ func initLog() {
 
 // formatEncodeTime 格式化 zap 日志时间
 func formatEncodeTime(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
-	enc.AppendString(time.Now().Format(time.DateTime))
+	now := time.Now()
+	enc.AppendString(now.Format(time.DateTime))
 }

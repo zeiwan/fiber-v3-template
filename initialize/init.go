@@ -1,7 +1,11 @@
 package initialize
 
 func init() {
-	initViper()
+	initConfig()
+
 	initLog()
 	initValidate()
+
+	initMysql()
+	initRedis()
 }

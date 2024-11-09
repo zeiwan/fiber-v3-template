@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fiber/global"
 	"github.com/gofiber/fiber/v3"
+	"github.com/jinzhu/copier"
 	"strconv"
 )
 
@@ -12,7 +13,6 @@ type RespType struct {
 	code int
 	msg  string
 	data any
-	show int // 0:不显示 1:显示
 }
 
 // Response 响应格式结构
@@ -24,9 +24,9 @@ type Response struct {
 }
 
 var (
-	Success  = RespType{code: 1, msg: "成功", show: 0}
-	Failed   = RespType{code: 0, msg: "失败", show: 1}
-	FileDown = RespType{code: 2, msg: "文件下载", show: 1}
+	Success  = RespType{code: 1, msg: "成功"}
+	Failed   = RespType{code: 0, msg: "失败"}
+	FileDown = RespType{code: 2, msg: "文件下载"}
 
 	ParamsValidError    = RespType{code: 0, msg: "参数校验错误"}
 	ParamsTypeError     = RespType{code: 0, msg: "参数类型错误"}
@@ -62,7 +62,7 @@ func (rt RespType) Make(msg string) RespType {
 }
 
 // MakeData 以响应类型生成数据
-func (rt RespType) MakeData(data interface{}) RespType {
+func (rt RespType) MakeData(data any) RespType {
 	rt.data = data
 	return rt
 }
@@ -78,20 +78,21 @@ func (rt RespType) Msg() string {
 }
 
 // Data 获取data
-func (rt RespType) Data() interface{} {
+func (rt RespType) Data() any {
 	return rt.data
 }
 
 // Result 统一响应
 func Result(resp RespType) Response {
-	if resp.data == nil {
-		resp.data = []string{}
+	show := 0
+	if resp.code != Success.code {
+		show = 1
 	}
 	return Response{
 		Code: resp.code,
 		Msg:  resp.msg,
 		Data: resp.data,
-		Show: 1,
+		Show: show,
 	}
 }
 
@@ -104,7 +105,7 @@ func CheckAndResp(ctx fiber.Ctx, err error) error {
 }
 
 // CheckAndRespWithData 判断是否出现错误，并返回对应响应（带data数据）
-func CheckAndRespWithData(ctx fiber.Ctx, data interface{}, err error) error {
+func CheckAndRespWithData(ctx fiber.Ctx, data any, err error) error {
 	if err != nil {
 		return ErrorHandler(ctx, err)
 	}
@@ -124,7 +125,7 @@ func FailWithData(ctx fiber.Ctx, resp RespType, data any) error {
 }
 
 // loggerResp 把错误写入日志
-func loggerResp(resp RespType, template string, args ...interface{}) {
+func loggerResp(resp RespType, template string, args ...any) {
 	loggerFunc := global.Logger.Warnf
 	if resp.code >= 500 {
 		loggerFunc = global.Logger.Errorf
@@ -137,7 +138,6 @@ func ErrorHandler(ctx fiber.Ctx, err error) error {
 	if err == nil {
 		return nil
 	}
-
 	// 自定义错误类型
 	var v RespType
 	if errors.As(err, &v) {
@@ -149,4 +149,13 @@ func ErrorHandler(ctx fiber.Ctx, err error) error {
 	}
 	// 其他类型
 	return Fail(ctx, SystemError)
+}
+
+// Copy 拷贝结构体
+func Copy(toValue interface{}, fromValue interface{}) interface{} {
+	if err := copier.Copy(toValue, fromValue); err != nil {
+		global.Logger.Errorf("Copy err: err=[%+v]", err)
+		panic(SystemError)
+	}
+	return toValue
 }

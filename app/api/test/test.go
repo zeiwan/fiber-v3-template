@@ -1,33 +1,25 @@
 package test
 
 import (
+	"fiber/app/schemas/req"
 	"fiber/app/service/test"
 	"fiber/core"
 	"fiber/core/response"
 	"fiber/core/uberDig"
-	"fmt"
+	"fiber/middleware"
 	"github.com/gofiber/fiber/v3"
 )
 
-var ConfigGroup = uberDig.Group("/config", newConfigHandler, regConfigGroup)
+var ConfigGroup = uberDig.Group("/test", newConfigHandler, regConfigGroup)
 
 func regConfigGroup(r fiber.Router, group *uberDig.GroupBase) error {
 	// 在这里添加实际的路由注册逻辑
 	return group.Reg(func(handle *configHandler) error {
-		r.Get("/getConfig", handle.getConfig, log)
+		r.Get("/get", handle.getConfig, middleware.RecordLog).Name("优雅的路由")
 		return nil
 	})
 }
 
-func log(ctx fiber.Ctx) error {
-	fmt.Println("path", ctx.Path())
-	//ctx.Path()
-	err := ctx.Next()
-	if err != nil {
-		return err
-	}
-	return nil
-}
 func newConfigHandler(srv test.IConfigService) *configHandler {
 	return &configHandler{srv: srv}
 }
@@ -37,19 +29,10 @@ type configHandler struct {
 }
 
 func (h configHandler) getConfig(ctx fiber.Ctx) error {
-	var obj Req
-
+	var obj req.TestGetReq
 	if err := core.VerifyUtil.VerifyQuery(ctx, &obj); err != nil {
 		return err
 	}
-
-	_, err := h.srv.GetConfig()
-	fmt.Println("obj", err)
-	return response.CheckAndResp(ctx, err)
-}
-
-type Req struct {
-	Account string `form:"account"`
-	Id      int    `form:"id" validate:"required"`
-	Ids     int    `form:"ids" validate:"required"`
+	resp, err := h.srv.GetConfig(obj)
+	return response.CheckAndRespWithData(ctx, resp, err)
 }
