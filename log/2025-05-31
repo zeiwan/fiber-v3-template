@@ -1,0 +1,82 @@
+{"level":"info","ts":"2025-05-31 05:56:40","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 05:56:40","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 05:56:40","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 05:56:40","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-05-31 06:03:09","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:03:09","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:03:09","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:03:09","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-05-31 06:04:08","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:04:08","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:04:08","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:04:08","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-05-31 06:04:10","caller":"response/response.go:135","msg":"Request Fail: url=[/adminapi/movie/get], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-05-31 06:04:30","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:04:30","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:04:30","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:04:30","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-05-31 06:04:33","caller":"response/response.go:135","msg":"Request Fail: url=[/adminapi/movie/get], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-05-31 06:08:20","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:08:20","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:08:20","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:08:20","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-05-31 06:16:30","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:16:30","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:16:30","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:16:30","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-05-31 06:18:51","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:18:51","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:18:51","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:18:51","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-05-31 06:19:21","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:19:21","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:19:21","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:19:21","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-05-31 06:20:12","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:20:12","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:20:12","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:20:12","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-05-31 06:21:05","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:21:05","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:21:05","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:21:05","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-05-31 06:21:26","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:21:26","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:21:26","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:21:26","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-05-31 06:52:34","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:52:34","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:52:34","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:52:34","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-05-31 06:52:40","caller":"response/response.go:135","msg":"Request Fail: url=[/adminapi/movie/get], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-05-31 06:53:12","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:53:12","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:53:12","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:53:12","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-05-31 06:53:15","caller":"response/response.go:135","msg":"Request Fail: url=[/adminapi/movie/get], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-05-31 06:57:35","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 06:57:35","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 06:57:35","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 06:57:35","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-05-31 07:00:07","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 07:00:07","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 07:00:07","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 07:00:07","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-05-31 07:00:32","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 07:00:32","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 07:00:32","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 07:00:32","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-05-31 07:00:34","caller":"response/response.go:135","msg":"Request Fail: url=[/adminapi/movie/get], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-05-31 07:07:03","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 07:07:03","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 07:07:03","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 07:07:03","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-05-31 07:07:14","caller":"response/response.go:135","msg":"Request Fail: url=[/adminapi/movie/get], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-05-31 07:14:36","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 07:14:36","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 07:14:36","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 07:14:37","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-05-31 07:16:04","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-05-31 07:16:04","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-05-31 07:16:04","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-05-31 07:16:04","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}

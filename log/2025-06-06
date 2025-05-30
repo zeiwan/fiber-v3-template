@@ -1,0 +1,7 @@
+{"level":"info","ts":"2025-06-06 20:29:40","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-06 20:29:40","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-06 20:29:40","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-06 20:29:40","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-06-06 20:29:48","caller":"response/response.go:135","msg":"Request Fail: url=[/movie/hotList], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-07 00:23:27","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-07 01:54:59","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}

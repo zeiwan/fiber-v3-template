@@ -20,8 +20,10 @@ var MovieGroup = uber.Group(
 // regMovieGroup 注册路由组的具体路由
 func regMovieGroup(r fiber.Router, group *uber.GroupBase) error {
 	return group.Reg(func(handle *movieHandler) error {
-		// 路由：GET /movie/get
-		r.Get("/get", handle.getMovieHotList, middleware.RecordLog).Name("获取电影热门列表")
+		r.Get("/hotList", handle.getHotList, middleware.RecordLog).Name("热门电影")
+		r.Get("/cityList", handle.getCityList, middleware.RecordLog).Name("城市列表")
+		r.Get("/getCinemaList", handle.getCinemaList, middleware.RecordLog).Name("影院列表")
+		r.Get("/getCityArea", handle.getCityArea, middleware.RecordLog).Name("城市区域")
 		return nil
 	})
 }
@@ -36,12 +38,35 @@ type movieHandler struct {
 	srv movie.IMovieService
 }
 
-// getMovie 处理逻辑
-func (h movieHandler) getMovieHotList(ctx fiber.Ctx) error {
-	var obj req.MovieHotListReq
+func (h movieHandler) getCityList(ctx fiber.Ctx) error {
+	resp, err := h.srv.GetCityList()
+	return response.CheckAndRespWithData(ctx, resp, err)
+}
+
+func (h movieHandler) getHotList(ctx fiber.Ctx) error {
+	var obj req.MovieCityIdReq
 	if err := core.VerifyUtil.VerifyQuery(ctx, &obj); err != nil {
 		return err
 	}
-	resp, err := h.srv.GetMovieHotLists(obj)
+	resp, err := h.srv.GetHotLists(obj)
+	return response.CheckAndRespWithData(ctx, resp, err)
+}
+
+func (h movieHandler) getCinemaList(ctx fiber.Ctx) error {
+	var obj req.CinemaListReq
+	if err := core.VerifyUtil.VerifyQuery(ctx, &obj); err != nil {
+		return err
+	}
+	resp, err := h.srv.GetCinemaList(obj)
+	return response.CheckAndRespWithData(ctx, resp, err)
+}
+
+func (h movieHandler) getCityArea(ctx fiber.Ctx) error {
+	var obj req.MovieCityIdReq
+	if err := core.VerifyUtil.VerifyQuery(ctx, &obj); err != nil {
+		return err
+	}
+	resp, err := h.srv.GetCityArea(obj)
+
 	return response.CheckAndRespWithData(ctx, resp, err)
 }

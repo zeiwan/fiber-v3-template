@@ -6,7 +6,5 @@ import (
 
 func TestName(t *testing.T) {
 	client := NewCatClient()
-	client.SetToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDg1NjI0MDMsInJvbGUiOiJkeXAiLCJleHAiOjE3ODAwOTg0MDMsInN1YiI6NDk2MjgzfQ.UqVhDxEiapIyJNl3Y9fAN4SXLEpupM-Qw-Mn4UZrVnM")
-	client.GetCityList()
-
+	client.GetCinemaSeat("43612784620885AE80CA13A3034DFD9E")
 }

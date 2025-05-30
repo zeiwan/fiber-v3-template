@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fiber/core/response"
 	"fiber/global"
+	"github.com/creasty/defaults"
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v3"
 )
@@ -14,6 +15,9 @@ type verifyUtil struct{}
 
 // bindAndValidate 绑定并验证数据
 func (vu verifyUtil) bindAndValidate(obj any, bindFunc func(any) error) error {
+	// 设置默认值
+	defaults.MustSet(obj)
+
 	// 绑定数据
 	if err := bindFunc(obj); err != nil {
 		return response.ParamsTypeError.MakeData(vu.translateErr(err).Error())

@@ -19,11 +19,13 @@ type log struct {
 
 type server struct {
 	Name          string `yaml:"name"`
-	URLPrefix     string `yaml:"urlPrefix"`
+	AppPrefix     string `yaml:"appPrefix"`
+	AdminPrefix   string `yaml:"adminPrefix"`
 	Port          int    `yaml:"port"`
 	BaseAPI       string `yaml:"baseApi"`
 	ResourcePath  string `yaml:"resourcePath"`
 	EnablePrefork bool   `yaml:"enablePrefork"`
+	Salt          string `yaml:"salt"`
 }
 
 type mysql struct {

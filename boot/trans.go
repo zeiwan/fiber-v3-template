@@ -29,6 +29,7 @@ func initValidate() {
 		global.Logger.Fatalf("初始化验证器翻译器失败: %v", err)
 		return
 	}
+
 	global.Validate = validate
 	global.Trans = trans
 	global.Logger.Info("初始化验证器翻译器成功")

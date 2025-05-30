@@ -6,7 +6,6 @@ import (
 	"github.com/goccy/go-json"
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/cors"
-	"github.com/gofiber/fiber/v3/middleware/csrf"
 	"github.com/gofiber/fiber/v3/middleware/etag"
 	"github.com/gofiber/fiber/v3/middleware/helmet"
 	"github.com/gofiber/fiber/v3/middleware/idempotency"
@@ -40,8 +39,8 @@ func Use() *fiber.App {
 	app.Use(requestid.New())
 	// 添加跨源资源共享
 	app.Use(cors.New())
-	// CSRF 防御
-	app.Use(csrf.New())
+	// CSRF 防御 暂时不可用，暂时注释掉
+	//app.Use(csrf.New())
 	// ETag
 	app.Use(etag.New())
 	//	添加安全头

@@ -1,6 +1,6 @@
 package main
 
 func main() {
-	GenAPI("movie")
-	GenService("movie")
+	GenAPI("login")
+	GenService("login")
 }

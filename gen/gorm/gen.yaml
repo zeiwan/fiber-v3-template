@@ -3,21 +3,21 @@ config:
 
 relation:
   - table: gorm_gen_test                       #gorm_gen_test 测试表
-  #  - table: la_config                      # 配置表
-  #  - table: la_admin                       # 管理员表
-  #  - table: la_system_menu                 # 系统菜单表
-  ##  - table: la_generate_column
-  #  - table: la_article
-  #  - table: la_dict_type                   # 字典类型表
-  #  - table: la_dict_data                   # 字典数据表
-  #  - table:  la_casbin_rule
-  #  - table:  la_admin_jobs                 # 岗位关联表
-  #  - table:  la_admin_dept                 # 部门关联表
-  #  - table: la_jobs                        # 岗位表
-  #  - table: la_dept                        # 部门表
-  #  - table: la_file_cate                   # 文件分类表
-  #  - table: la_file                        # 文件表
-  #  - table: la_operation_log               # 操作日志表
+#  - table: la_config                      # 配置表
+  - table: la_admin                       # 管理员表
+#  - table: la_system_menu                 # 系统菜单表
+#  - table: la_generate_column
+#  - table: la_article
+#  - table: la_dict_type                   # 字典类型表
+#  - table: la_dict_data                   # 字典数据表
+#  - table:  la_casbin_rule
+#  - table:  la_admin_jobs                 # 岗位关联表
+#  - table:  la_admin_dept                 # 部门关联表
+#  - table: la_jobs                        # 岗位表
+#  - table: la_dept                        # 部门表
+#  - table: la_file_cate                   # 文件分类表
+#  - table: la_file                        # 文件表
+#  - table: la_operation_log               # 操作日志表
   #
   ##    relate:
   ##      - table: sys_permission  #权限(按钮)管理

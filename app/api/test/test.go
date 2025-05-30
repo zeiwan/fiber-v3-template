@@ -44,7 +44,7 @@ func (h configHandler) getConfig(ctx fiber.Ctx) error {
 	}
 
 	// 2. 调用Service层
-	resp, err := h.srv.GetConfig(obj)
+	resp, err := h.srv.GetConfig(ctx, obj)
 
 	// 3. 统一响应格式（成功/错误）
 	return response.CheckAndRespWithData(ctx, resp, err)

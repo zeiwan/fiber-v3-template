@@ -1,8 +1,10 @@
 package boot
 
 import (
-	"fiber/app/api"
-	"fiber/app/service"
+	amApi "fiber/admin/api"
+	amService "fiber/admin/service"
+	appApi "fiber/app/api"
+	appService "fiber/app/service"
 	"fiber/global"
 	"fiber/middleware"
 	"fmt"
@@ -20,11 +22,11 @@ func InitHttpServer() {
 	app := middleware.Use()
 
 	// 初始化服务
-	service.InitService()
-
+	appService.InitService()
+	amService.InitService()
 	// 初始化路由
-	api.InitRouter(app)
-
+	appApi.InitRouter(app)
+	amApi.InitRouter(app)
 	Listen := fmt.Sprintf(":%d", global.Conf.Server.Port)
 
 	// 启动应用

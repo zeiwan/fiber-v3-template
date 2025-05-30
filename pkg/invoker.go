@@ -17,15 +17,19 @@ func (i *Invoker) Get(path string, params url.Values, data any) error {
 	return i.do(client, "GET", path, &data)
 }
 
-func (i *Invoker) post(path string, params url.Values, body map[string]any, data any) error {
+func (i *Invoker) Post(path string, params url.Values, form map[string]string, json map[string]any, data any) error {
 	client := i.Client.DevMode().R()
 
-	client.FormData = params
+	client.SetFormData(form)
 
-	client.SetBody(body)
+	client.SetBody(json)
 
-	client.SetHeader("Accept", "application/json, text/plain, */*")
-	client.SetHeader("Content-Type", "application/json;charset=UTF-8")
+	if form != nil {
+		client.SetHeader("Content-Type", "application/x-www-form-urlencoded")
+	} else {
+		client.SetHeader("Content-Type", "application/json;charset=UTF-8")
+	}
+
 	err := i.do(client, "POST", path, &data)
 	return err
 }
@@ -35,6 +39,7 @@ func (i *Invoker) do(client *req.Request, method string, path string, data any) 
 	if err != nil {
 		return
 	}
+
 	err = resp.Into(&data)
 	if err != nil {
 		return

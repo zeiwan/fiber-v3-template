@@ -1,0 +1,119 @@
+{"level":"info","ts":"2025-06-02 19:17:37","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 19:17:37","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 19:17:37","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 19:17:37","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-06-02 19:18:00","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-06-02 19:19:12","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 19:19:12","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 19:19:12","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 19:19:12","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-06-02 19:19:51","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 19:19:51","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 19:19:51","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 19:19:51","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-06-02 19:20:21","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 19:20:21","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 19:20:21","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 19:20:21","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-06-02 19:21:13","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 19:21:13","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 19:21:13","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 19:21:13","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-06-02 19:24:23","caller":"response/response.go:135","msg":"Request Fail: url=[/api//movie/cityList], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-02 19:24:55","caller":"response/response.go:135","msg":"Request Fail: url=[/api/movie/cityList], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-02 19:25:09","caller":"response/response.go:135","msg":"Request Fail: url=[/api/movie/cityList], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-06-02 19:25:16","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 19:25:16","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 19:25:16","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 19:25:16","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-06-02 19:25:20","caller":"response/response.go:135","msg":"Request Fail: url=[/api/movie/cityList], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-02 19:25:22","caller":"response/response.go:135","msg":"Request Fail: url=[/api/movie/cityList], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-06-02 19:25:31","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 19:25:31","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 19:25:31","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 19:25:31","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-06-02 19:28:53","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-06-02 19:32:10","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 19:32:10","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 19:32:10","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 19:32:10","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-06-02 19:41:58","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 19:41:58","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 19:41:58","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 19:41:58","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-06-02 20:09:46","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 20:09:46","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 20:09:46","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 20:09:46","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-06-02 20:10:00","caller":"response/response.go:135","msg":"Request Fail: url=[/api/movie/hotList], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-06-02 20:11:21","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 20:11:22","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 20:11:22","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 20:11:22","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-06-02 20:11:25","caller":"response/response.go:135","msg":"Request Fail: url=[/api/movie/hotList], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-06-02 20:12:27","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 20:12:27","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 20:12:27","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 20:12:27","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-06-02 20:12:34","caller":"response/response.go:135","msg":"Request Fail: url=[/api/movie/hotList], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-06-02 20:13:10","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 20:13:10","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 20:13:10","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 20:13:10","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-06-02 20:13:17","caller":"response/response.go:135","msg":"Request Fail: url=[/api/movie/hotList], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-06-02 20:15:39","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 20:15:39","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 20:15:39","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 20:15:39","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-06-02 20:15:44","caller":"response/response.go:135","msg":"Request Fail: url=[/api/movie/hotList], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-06-02 20:18:09","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 20:18:09","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 20:18:09","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 20:18:09","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-06-02 20:18:18","caller":"response/response.go:135","msg":"Request Fail: url=[/api/movie/hotList], resp.tpl=[0:系统错误]"}
+{"level":"info","ts":"2025-06-02 20:18:54","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 20:18:54","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 20:18:54","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 20:18:54","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"info","ts":"2025-06-02 20:51:45","caller":"boot/log.go:35","msg":"初始化日志完成"}
+{"level":"info","ts":"2025-06-02 20:51:45","caller":"boot/trans.go:35","msg":"初始化验证器翻译器成功"}
+{"level":"info","ts":"2025-06-02 20:51:45","caller":"boot/mysql.go:84","msg":"初始化mysql完成"}
+{"level":"info","ts":"2025-06-02 20:51:45","caller":"boot/redis.go:36","msg":"Redis 初始化成功！"}
+{"level":"warn","ts":"2025-06-02 21:07:53","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-02 21:20:18","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-02 21:33:01","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-03 05:43:05","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-03 05:43:05","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-03 06:52:06","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-03 07:04:19","caller":"response/response.go:135","msg":"Request Fail: url=[/api/dyp/getHotList], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-03 09:50:22","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-03 10:31:21","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-03 11:42:34","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-03 12:59:44","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-03 13:57:38","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-03 15:50:42","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-03 17:48:34","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 12:29:29","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 14:04:57","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 14:32:21","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 15:01:13","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 15:08:42","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 15:20:04","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 15:20:17","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 15:20:39","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 15:20:39","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 15:20:39","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 17:00:58","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 17:00:58","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 19:29:51","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 20:31:25","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-04 20:36:51","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-05 07:42:58","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-05 08:36:18","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-05 08:36:18","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-05 08:36:22","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-05 10:15:06","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-05 12:13:10","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-05 12:27:48","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-05 12:34:26","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}
+{"level":"warn","ts":"2025-06-05 13:30:08","caller":"response/response.go:135","msg":"Request Fail: url=[/], resp.tpl=[0:系统错误]"}

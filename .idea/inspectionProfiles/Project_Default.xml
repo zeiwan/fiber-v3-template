@@ -1,0 +1,15 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="GoDfaErrorMayBeNotNil" enabled="true" level="WARNING" enabled_by_default="true">
+      <methods>
+        <method importPath="fiber/pkg/whiteCatApi" receiver="CatClient" name="GetCityList" />
+        <method importPath="fiber/pkg/whiteCatApi" receiver="CatClient" name="GetHotList" />
+        <method importPath="fiber/pkg/whiteCatApi" receiver="*CatClient" name="GetHotList" />
+        <method importPath="fiber/pkg/whiteCatApi" receiver="*CatClient" name="CityList" />
+        <method importPath="fiber/pkg/whiteCatApi" receiver="*CatClient" name="GetTabsCinemaList" />
+        <method importPath="fiber/pkg/whiteCatApi" receiver="*CatClient" name="GetCityArea" />
+      </methods>
+    </inspection_tool>
+  </profile>
+</component>
