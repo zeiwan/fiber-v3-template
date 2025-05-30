@@ -3,6 +3,7 @@ package whiteCatApi
 import (
 	"fiber/pkg"
 	"github.com/imroc/req/v3"
+	"net/url"
 )
 
 var (
@@ -28,4 +29,10 @@ func (c CatClient) SetToken(token string) {
 
 func (c CatClient) GetCityList() {
 	c.invoker.Get("/api/app/v1/dyp/getCityList", nil, nil)
+}
+func (c CatClient) GetHotList(cityId string) (err error, resp CommonResp) {
+	values := url.Values{}
+	values.Set("cityId", cityId)
+	err = c.invoker.Get("api/app/v1/dyp/getHotList", values, &resp)
+	return err, resp
 }

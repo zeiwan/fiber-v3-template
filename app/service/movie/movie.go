@@ -4,6 +4,7 @@ import (
 	"fiber/app/schemas/req"
 	"fiber/model/dao"
 	"fiber/pkg/whiteCatApi"
+	"fmt"
 )
 
 type IMovieService interface {
@@ -23,6 +24,10 @@ type movieService struct {
 
 func (s movieService) GetMovieHotLists(listReq req.MovieHotListReq) (any, error) {
 	//var obj []resp.MovieHotListResp
-	s.cat.GetCityList()
-	return nil, nil
+	err, resp := s.cat.GetHotList(listReq.CityId)
+	if err != nil {
+		return nil, err
+	}
+	fmt.Println(resp.Data)
+	return resp, nil
 }

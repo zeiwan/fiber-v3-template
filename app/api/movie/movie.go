@@ -7,6 +7,7 @@ import (
 	"fiber/core/response"
 	"fiber/core/uber"
 	"fiber/middleware"
+	"fmt"
 	"github.com/gofiber/fiber/v3"
 )
 
@@ -42,6 +43,7 @@ func (h movieHandler) getMovieHotList(ctx fiber.Ctx) error {
 	if err := core.VerifyUtil.VerifyQuery(ctx, &obj); err != nil {
 		return err
 	}
-	resp, err := h.srv.GetMovieHotLists(obj)
-	return response.CheckAndRespWithData(ctx, resp, err)
+	fmt.Println(obj)
+	//resp, err := h.srv.GetMovieHotLists(obj)
+	return response.CheckAndRespWithData(ctx, nil, nil)
 }

@@ -4,6 +4,8 @@ go 1.23.0
 
 require (
 	github.com/SymbioSix/ProgressieAPI v0.0.0-20240929031320-e913fcb53a35
+	github.com/creasty/defaults v1.8.0
+	github.com/gobuffalo/flect v1.0.3
 	github.com/gobuffalo/plush/v5 v5.0.5
 	github.com/goccy/go-json v0.10.3
 	github.com/gofiber/fiber/v3 v3.0.0-beta.4
@@ -50,7 +52,6 @@ require (
 	github.com/go-openapi/swag v0.23.0 // indirect
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/go-task/slim-sprig/v3 v3.0.0 // indirect
-	github.com/gobuffalo/flect v1.0.3 // indirect
 	github.com/gofiber/fiber/v2 v2.52.5 // indirect
 	github.com/gofiber/schema v1.2.0 // indirect
 	github.com/gofiber/utils/v2 v2.0.0-beta.7 // indirect

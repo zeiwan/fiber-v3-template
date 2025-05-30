@@ -1,5 +1,7 @@
 package req
 
 type MovieHotListReq struct {
-	cityId uint
+	CityId string `query:"cityId" default:"859" ` // Ensures it's never empty
 }
+
+//validate:"required"
